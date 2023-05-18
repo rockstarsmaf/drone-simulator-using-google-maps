@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
 
+## Install node_modules
+
+Run `npm i` and the node modules file will be installed.
+
+## Change Google maps API key for maps to load
+
+In the `index.html` file, change `<script src="https://maps.googleapis.com/maps/api/js?key=test&libraries=places&language=en&callback=Function.prototype"></script>` key=test to actual API key for maps to load.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
