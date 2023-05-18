@@ -2,6 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
 
+Simple website that simulates the drone motion on Google Maps based on user-provided information. Start position for your drone is your current location in the map, then move the following drone to the latitude and longitude provided by the user. The user also inputs the time in milliseconds, that is the time take by the drone to reach the destination.
+
+Features:
+1) Display world maps (you can use any of the map providers available) in your app background, you can use npm packages for the same.
+2) Take latitude,longitude and time as input from the user. 
+3) When a user clicks on the 'simulate' button, use Google map marker to display the drone and draw the entire expected path. Keep updating the drone position with time and also update the progress over the map.
+
+Extra features:
+1) Provide user functionality to pause/resume the simulation.
+2) Give users the ability to simulate multiple drones in parallel.
+
+`To simulate multiple drones, when in simulation mode add new user details and click on simulation. Number of times user submits data, that many drones are created and moved from current location to thier respective destination in the given time.`
+
 ## Install node_modules
 
 Run `npm i` and the node modules file will be installed.
