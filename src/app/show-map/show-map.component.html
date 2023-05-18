@@ -1,0 +1,40 @@
+<div class="user-loc" *ngIf="mapLoaded">
+    <h2>Enter Destination</h2>
+    <form [formGroup]="simulateForm">
+        <div class="form-group">
+            <label for="Longitude">Longitude</label>
+            <input type="number" formControlName="longitude" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="Latitude">Latitude</label>
+            <input type="number" formControlName="latitude" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="Latitude">Time (in milliseconds)</label>
+            <input type="number" formControlName="time" class="form-control" />
+        </div>
+        <div class="text-danger" *ngIf="!simulateForm.valid">
+            Please fill all the values to simulate.
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()"
+                [disabled]="!simulateForm.valid || isPause ">
+                <span class="spinner-border spinner-border-sm mr-1" *ngIf="isSimulate && userCount!=0"></span>
+                Simulate
+            </button>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" (click)="pauseTimer()"
+                [disabled]="(isPause && !isSimulate) || userCount==0">
+                <span class="spinner-border spinner-border-sm mr-1" *ngIf="isPause"></span>
+                Pause
+            </button>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" (click)="resumeTimer()" [disabled]="!isPause || userCount==0">
+                Resume
+            </button>
+        </div>
+    </form>
+</div>
+<div #map id="map"></div>
